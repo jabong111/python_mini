@@ -29,17 +29,13 @@ def main():
     print("Enter the message to display with the bitmap")
     message = input("> ")
 
-    message_cnt = 0
     new_image = [] 
     print(len(new_image))
     
     for i in range(len(image)):
-        if message_cnt > len(message)-1:
-            message_cnt = 0
 
         if (image[i] == '.' or image[i] == '*'):
-            new_image.append(message[message_cnt])
-            message_cnt += 1
+            new_image.append(message[i % len(message)])
         else:
             new_image.append(image[i]) 
 
